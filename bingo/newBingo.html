@@ -1,0 +1,258 @@
+<html>
+
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Cambay' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300' rel='stylesheet' type='text/css'>
+<meta charset="utf-8"/>
+
+<title>Bingo</title>
+
+<link rel="stylesheet" type="text/css" href="bingoCSS.css">
+
+
+</head>
+
+<body onload="newCard()">
+
+	<div id="container">
+    <div id="header">
+    </div>
+    
+	<div id="content">
+		<span class="circle" id="callNum">&nbsp; </span>
+		<p id="towin" class="win">5 to go</p>
+		<table id="bingotable">
+			<tr>
+				<th class="orange">B</th>
+				<th class="orange">I</th>
+				<th class="orange">N</th>
+				<th class="orange">G</th>
+				<th class="orange">O</th>
+			</tr>
+			<tr>
+				<td><span class="dot" id="square0"> &nbsp; </span></td>
+				<td> <span class="dot" id="square1"> &nbsp; </span></td>
+				<td> <span class="dot" id="square2"> &nbsp; </span></td>
+				<td> <span class="dot" id="square3"> &nbsp; </span></td>
+				<td> <span class="dot" id="square4"> &nbsp; </span></td>
+			</tr>
+			<tr>
+				<td> <span class="dot" id="square5"> &nbsp; </span></td>
+				<td> <span class="dot" id="square6"> &nbsp; </span></td>
+				<td> <span class="dot" id="square7"> &nbsp; </span></td>
+				<td> <span class="dot" id="square8"> &nbsp; </span></td>
+				<td> <span class="dot" id="square9"> &nbsp; </span></td>
+			</tr>
+			<tr>
+				<td> <span class="dot" id="square10"> &nbsp; </span></td>
+				<td> <span class="dot" id="square11"> &nbsp; </span></td>
+				<td> <span class="dot" id="square12"> &nbsp; </span></td>
+				<td> <span class="dot" id="square13"> &nbsp; </span></td>
+				<td> <span class="dot" id="square14"> &nbsp; </span></td>
+			</tr>
+			<tr>
+				<td> <span class="dot" id="square15"> &nbsp; </span></td>
+				<td> <span class="dot" id="square16"> &nbsp; </span></td>
+				<td> <span class="dot" id="square17"> &nbsp; </span></td>
+				<td> <span class="dot" id="square18"> &nbsp; </span></td>
+				<td> <span class="dot" id="square19"> &nbsp; </span></td>
+			</tr>
+			<tr>
+				<td> <span class="dot" id="square20"> &nbsp; </span></td>
+				<td> <span class="dot" id="square21"> &nbsp; </span></td>
+				<td> <span class="dot" id="square22"> &nbsp; </span></td>
+				<td> <span class="dot" id="square23"> &nbsp; </span></td>
+				<td> <span class="dot" id="square24"> &nbsp; </span></td>
+			</tr>
+		</table>
+		<button id="btncall" ondblclick="call()">Call number</button><br>
+		
+	</div>
+	
+	<script type="text/javascript">
+	var number=new Array(25);
+	var number2=number;
+	var count=0;
+	var temp0=0,temp1=0,temp2=0,temp3=0,temp4=0,temp5=0,temp6=0,temp7=0,temp8=0,temp9=0,temp10=0,temp11=0;
+	for(var j=0;j<25;j++)
+	{
+		var current="square"+j;
+	var num=Math.floor((Math.random()*75)+1);
+		for(var i=0;i<=j;i++)
+		{
+			if(num==number[i])
+			{
+			num=Math.floor((Math.random()*75)+1);
+			i=0;
+			}
+			
+		}
+		number[j]=num;
+			document.getElementById(current).innerHTML=number[j];
+		}
+		
+		
+		function call()		
+		{
+			var hue="rgb("+Math.floor(Math.random()*256+150)+","+(Math.floor(Math.random()*256))+","+(Math.floor(Math.random()*256))+")";
+			document.getElementById("callNum").style.background=hue;
+			
+			var callnum=Math.floor((Math.random()*75)+1);
+			document.getElementById("callNum").innerHTML=callnum;
+			for(var i=0;i<25;i++)
+			{
+			
+				if(number[i]==callnum)
+				{
+					number2[i]=0;
+					document.getElementById("square"+i).style.backgroundColor="red";
+					win();
+				}
+			}
+		}
+		
+		
+		
+		function win()
+		{
+			if(number2[0]==0&&number2[1]==0&&number2[2]==0&&number2[3]==0&&number2[4]==0)
+			{
+				temp0++;
+			}
+			if(number2[5]==0&&number2[6]==0&&number2[7]==0&&number2[8]==0&&number2[9]==0)
+			{
+				temp1++;
+			}    
+			if(number2[10]==0&&number2[11]==0&&number2[12]==0&&number2[13]==0&&number2[14]==0)
+			{
+				temp2++;
+			}
+			if(number2[15]==0&&number2[16]==0&&number2[17]==0&&number2[18]==0&&number2[19]==0)
+			{
+				temp3++;
+			}
+			if(number2[20]==0&&number2[21]==0&&number2[22]==0&&number2[23]==0&&number2[24]==0)
+			{
+			 	temp4++;
+			}  
+			   
+			 if(number2[0]==0&&number2[5]==0&&number2[10]==0&&number2[15]==0&&number2[20]==0)
+			 {
+			 	temp5++;
+			 }
+			 if(number2[1]==0&&number2[6]==0&&number2[11]==0&&number2[16]==0&&number2[21]==0)
+			 {
+			 	temp6++;
+			 }
+			 if(number2[2]==0&&number2[7]==0&&number2[12]==0&&number2[17]==0&&number2[22]==0)
+			 {
+			 	temp7++;
+			 }  
+			 if(number2[3]==0&&number2[8]==0&&number2[13]==0&&number2[18]==0&&number2[23]==0)
+			 {
+			 	temp8++;
+			 }
+			 if(number2[4]==0&&number2[9]==0&&number2[14]==0&&number2[19]==0&&number2[24]==0)
+			 {
+			 	temp9++;
+			 }  
+			 if(number2[0]==0&&number2[6]==0&&number2[12]==0&&number2[18]==0&&number2[24]==0)
+			 {
+			 	temp10++;
+			 }  
+			  if(number2[4]==0&&number2[8]==0&&number2[12]==0&&number2[16]==0&&number2[20]==0)
+			 {
+			 	temp11++;
+			 }  
+			 
+			 if(temp0==1)
+			 {
+			 	count++;
+			 }
+			 if(temp1==1)
+			 {
+			 	count++;
+			 }
+			 if(temp2==1)
+			 {
+			 	count++;
+			 }
+			 if(temp3==1)
+			 {
+			 	count++;
+			 }
+			 if(temp4==1)
+			 {
+			 	count++;
+			 }
+			 if(temp5==1)
+			 {
+			 	count++;
+			 }
+			 if(temp6==1)
+			 {
+			 	count++;
+			 }
+			 if(temp7==1)
+			 {
+			 	count++;
+			 }
+			 if(temp8==1)
+			 {
+			 	count++;
+			 }
+			 if(temp9==1)
+			 {
+			 	count++;
+			 }
+			 if(temp10==1)
+			 {
+			 	count++;
+			 }
+			 if(temp11==1)
+			 {
+			 	count++;
+			 }
+			 check();
+			 
+		}
+
+		function check()
+		{
+		 
+				if(count==0)
+				{
+					document.getElementById("towin").innerHTML="5 to go";
+				}
+				if(count==1)
+				{
+					document.getElementById("towin").innerHTML="4 to go";
+				}
+				else if(count==2)
+				{
+					document.getElementById("towin").innerHTML="3 to go";
+				}
+				else if(count==3)
+				{
+					document.getElementById("towin").innerHTML="2 to go";
+				}
+				else if(count==4)
+				{
+					document.getElementById("towin").innerHTML="1 to go";
+				}
+				else if(count>=5)
+				{
+					document.getElementById("towin").innerHTML="Bingo";
+					alert("Bingo");
+				}
+		}		
+			
+		
+	</script>
+
+	</script>
+
+</body>
+
+</html>
+

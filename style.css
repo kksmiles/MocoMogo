@@ -1,0 +1,38 @@
+.container1
+{
+	
+	text-align: center;
+	
+	
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+
+.head
+{
+	margin-top: -240px;
+}
+
+.flip img
+{
+	animation: flipIt 0.8s linear infinite;
+}
+
+.head img
+{
+	animation-delay: 0.4s;
+}
+
+@keyframes flipIt
+{
+	0%{width:0px;
+	height:240px;}
+	25%{width:240px;
+	height:240px;}
+	50%{width:0px;
+	height:240px;}
+	100%{width:0px;
+	height:240px;}
+}

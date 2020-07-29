@@ -1,0 +1,73 @@
+
+
+
+#bingotable{
+  margin:20px auto 0;
+  text-align: center;
+  width: 400px;
+  height:400px;
+  border-collapse: collapse;
+  background: white;
+}
+
+
+th, td {
+  font-family: Helvetica;
+  margin: 0 auto;
+  text-align: center;
+  border: 3px solid black;
+  width: 20%;
+}
+
+.orange {
+  background:black;
+  color:white;
+  font-weight:bold;
+  font-size:1.5rem;
+
+}
+
+#content{
+	margin:20px auto 0;
+}
+
+
+.dot{
+	text-align:center;
+	height:30px;
+	width:30px;
+	content:close-quote;
+	background-color:white;
+	border-radius:50%;
+	display:inline-block;
+	font-size:1.5rem;
+	}
+
+
+
+	.circle
+	{
+
+		display:block;
+		width: 150px;
+		height: 150px;
+		margin: 20px auto 0;
+		/*background-color: #3b4ba3;*/
+		background-color:#9B59B6;
+		border-radius: 50%;
+		box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
+		background-image: -webkit-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);
+		background-image: -moz-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);
+		background-image: -o-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);
+		background-image: -ms-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);
+		font-size:70px;
+		text-align: center;
+		font:white;
+	}
+	.win{
+		font-size:50px;
+		color:#eeda2b;
+	    margin:20px auto 0;
+	    text-align: center;
+
+	}

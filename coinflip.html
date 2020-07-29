@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Flipr</title>
+
+	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" href="bootstrap.min.css" />
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	<script src="flipr.js"></script>
+</head>
+<body background="tile2.png"/>
+	<div id="wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>Coin Toss</h1><br />
+				<br />
+				</div>
+				
+				<div class="col-lg-12">
+					 <div class="col-lg-4">
+					 	
+					 </div>
+					
+					
+					<div class="col-lg-4" id="left">
+						<div class="coinBox" style="display:block;">
+							<div class="tail" >
+								<img src="img/tailimg.png" width="122px" height="122px" />
+							</div>
+							<div class="head">
+								<img src="img/headimg.png" width="120px" height="120px"/>
+							</div>
+							
+						</div>
+					</div>
+					
+					<br />
+					<div class="col-lg-4 text-left" id="right">
+						<form name="theform">
+							<p>
+								<select  class="form-control" id="userChoice" style="width:200px;">
+									<option value="">Select your side</option>
+									<option value="head" >Head</option>
+									<option value="tail">Tail</option>
+								</select>
+							</p>
+							<p>
+								<button name="btn1" class="btn btn-lg btn-primary" id="btnFlip" disabled>Flip it</button>
+							</p>
+						</form>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</body>
+</html>

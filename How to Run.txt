@@ -1,0 +1,5 @@
+HOW TO RUN OUR PROJECT
+
+1. Run Timer.php first in a different browser window (*** note: must be in a different browser window rather than tab for performance issues ***)
+2. Click Server Start once
+3. Once the timer started counting down you can now successfully run the project
